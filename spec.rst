@@ -52,20 +52,21 @@ describing each tile table in a GeoPackage. The ``t_table_name`` column
 value SHALL be a row value of ``r_table_name`` in the ``raster_columns``
 table, enforced by a trigger. The ``is_times_two_zoom`` column value
 SHALL be 1 if zoom level pixel sizes vary by powers of 2 between
-adjacent zoom levels in the corresponding tile table, or 0 if not.
-
-`[Note 4] <#note-4>`__ (#note-4) and `[Note 5] <#note-5>`__ (#note-5)
+adjacent zoom levels in the corresponding tile table, or 0 if not  [1]_
+ [2]_.
 
 **Table 11** - ``tile_table_metadata`` Table or View Name:
 ``tile_table_metadata``
 
-+------------------+---------------+---------------------------------------------------------------------+-----------+---------------------------------------------------------------+------+-----+
-| Column Name      | Column Type   | Column Description                                                  | Null      | Default Key                                                   |
-+==================+===============+=====================================================================+===========+===============================================================+======+=====+
-| t\_table\_name   | text          | {RasterLayerName}{*tiles} \| no \| PK \| \| is*\ times\_two\_zoom   | integer   | Zoom level pixel sizes vary by powers of 2 (0=false,1=true)   | no   | 1   |
-+------------------+---------------+---------------------------------------------------------------------+-----------+---------------------------------------------------------------+------+-----+
++------------------------+---------------+---------------------------------------------------------------+--------+---------------+
+| Column Name            | Column Type   | Column Description                                            | Null   | Default Key   |
++========================+===============+===============================================================+========+===============+
+| t\_table\_name         | text          | ``RasterLayerName``\ \_tiles                                  | no     | PK            |
++------------------------+---------------+---------------------------------------------------------------+--------+---------------+
+| is\_times\_two\_zoom   | integer       | Zoom level pixel sizes vary by powers of 2 (0=false,1=true)   | no     | 1             |
++------------------------+---------------+---------------------------------------------------------------+--------+---------------+
 
-See Annex B: [Table Definition SQL clause B.9] (#clause-B9) -
+See Annex B: `Table Definition SQL clause B.9 <#clause-B9>`__ -
 ``tile_table_metadata``
 
 6.3.5.2 Tile Matrix Metadata
@@ -79,9 +80,7 @@ See Annex B: [Table Definition SQL clause B.9] (#clause-B9) -
 The ``tile_matrix_metadata`` table or view SHALL contain one row record
 for each zoom level that contains one or more tiles in each tiles table.
 It may contain row records for zoom levels in a tiles table that do not
-contain tiles.
-
-`[Note 3] <#note-3>`__ (#note-3)
+contain tiles [3]\_.
 
 The ``tile_matrix_metadata`` table documents the structure of the tile
 matrix at each zoom level in each tiles table. It allows GeoPackages to
@@ -92,17 +91,15 @@ regular intervals other than powers of 2. When the value of the
 ``is_times_two_zoom`` column in the ``tile_table_metadata`` record for a
 tiles table is 1 (true) then the pixel sizes for adjacent zoom levels in
 the ``tile_matrix_metadata`` table for that table SHALL only vary by
-powers of 2.
-
-`[Note 6] <#note-6>`__ (#note-6)
+powers of 2  [3]_.
 
 GeoPackages SHALL follow the most frequently used conventions of a tile
 origin at the upper left and a zoom-out-level of 0 for the smallest map
-scale “whole world” zoom level view, as specified by [WMTS]
-(http://portal.opengeospatial.org/files/?artifact\_id=35326). The tile
-coordinate (0,0) SHALL always refer to the tile in the upper left corner
-of the tile matrix at any zoom level, regardless of the actual
-availability of that tile. Pixel sizes for zoom levels sorted in
+scale “whole world” zoom level view, as specified by
+`WMTS <http://portal.opengeospatial.org/files/?artifact_id=35326>`__.
+The tile coordinate (0,0) SHALL always refer to the tile in the upper
+left corner of the tile matrix at any zoom level, regardless of the
+actual availability of that tile. Pixel sizes for zoom levels sorted in
 ascending order SHALL be sorted in descending order.
 
 GeoPackages SHALL not require that tiles be provided for level 0 or any
@@ -120,23 +117,25 @@ level.
 **Table 12** - ``tile_matrix_metadata`` + Table or View Name:
 ``tile_matrix_metadata``
 
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| Column Name         | Column Type   | Column Description                                                                                                                     | Null   | Default   | Key   |
-+=====================+===============+========================================================================================================================================+========+===========+=======+
-| ``t_table_name``    | text          | {RasterLayerName}*tiles \|no \| \| PK, FK \| \| ``zoom_level`` \| integer \| 0 <= ``zoom_level`` <= max*\ level for ``t_table_name``   | no     | 0         | PK    |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| ``matrix_width``    | integer       | Number of columns (>= 1) in tile matrix at this zoom level                                                                             | no     | 1         |       |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| ``matrix_height``   | integer       | Number of rows (>= 1) in tile matrix at this zoom level                                                                                | no     | 1         |       |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| ``tile_width``      | integer       | Tile width in pixels (>= 1)for this zoom level                                                                                         | no     | 256       |       |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| ``tile_height``     | integer       | Tile height in pixels (>= 1) for this zoom level                                                                                       | no     | 256       |       |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| ``pixel_x_size``    | double        | In ``t_table_name`` srid units or default meters for srid 0 (>0)                                                                       | no     | 1         |       |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
-| ``pixel_y_size``    | double        | In ``t_table_name`` srid units or default meters for srid 0 (>0)                                                                       | no     | 1         |       |
-+---------------------+---------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-----------+-------+
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| Column Name         | Column Type   | Column Description                                                 | Null   | Default   | Key      |
++=====================+===============+====================================================================+========+===========+==========+
+| ``t_table_name``    | text          | {RasterLayerName}\_tiles                                           | no     |           | PK, FK   |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``zoom_level``      | integer       | 0 <= ``zoom_level`` <= max\_level for ``t_table_name``             | no     | 0         | PK       |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``matrix_width``    | integer       | Number of columns (>= 1) in tile matrix at this zoom level         | no     | 1         |          |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``matrix_height``   | integer       | Number of rows (>= 1) in tile matrix at this zoom level            | no     | 1         |          |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``tile_width``      | integer       | Tile width in pixels (>= 1)for this zoom level                     | no     | 256       |          |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``tile_height``     | integer       | Tile height in pixels (>= 1) for this zoom level                   | no     | 256       |          |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``pixel_x_size``    | double        | In ``t_table_name`` srid units or default meters for srid 0 (>0)   | no     | 1         |          |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
+| ``pixel_y_size``    | double        | In ``t_table_name`` srid units or default meters for srid 0 (>0)   | no     | 1         |          |
++---------------------+---------------+--------------------------------------------------------------------+--------+-----------+----------+
 
 See Annex B: [Table Definition SQL clause B.10] (#clause-B10) -
 ``tile_matrix_metadata``
@@ -215,7 +214,7 @@ Clause B.9
 
 **Table 2** - ``tile_table_metadata`` Table Definition SQL
 
-.. code:: SQL
+::
 
     CREATE TABLE
       tile_table_metadata
@@ -276,39 +275,6 @@ corresponding tiles table if there are triggers on that table as
 specified in clause 7.3.5.x below that reference
 ``tile_matrix_metadata`` column values for that zoom level to reject
 invalid data
-
-[Note 4]
-        
-
-A row record for a tile table must be inserted into this table before
-row records can be inserted into the tile\_matrix\_metadata table
-described in clause 10.4 due to the presence of foreign key and other
-integrity constraints on that table.
-
-[Note 5]
-        
-
-GeoPackage applications that insert, update, or delete tiles (matrix
-set) table tiles row records are responsible for maintaining the
-corresponding descriptive contents of the tile\_table\_metadata table.
-
-[Note 6]
-        
-
-Most tile pyramids have an origin at the upper left, a convention
-adopted by the OGC [Web Map Tile Service (WMTS)]
-(http://portal.opengeospatial.org/files/?artifact\_id=35326), but some
-such as [TMS]
-(http://wiki.osgeo.org/wiki/Tile\_Map\_Service\_Specification) used by
-[MB-Tiles] (https://github.com/mapbox/mbtiles-spec) have an origin at
-the lower left. Most tile pyramids, such as [Open Street Map]
-(http://wiki.openstreetmap.org/wiki/Main\_Page), [OSMDroidAtlas]
-(http://wiki.openstreetmap.org/wiki/Main\_Page), and [FalconView]
-(http://www.falconview.org/trac/FalconView) use a zoom\_out\_level of 0
-for the smallest map scale “whole world” zoom level view, another
-convention adopted by WMTS, but some such as [Big Planet Tracks]
-(http://code.google.com/p/big-planet-tracks/) invert this convention and
-use 0 or 1 for the largest map scale “local detail” zoom level view.
 
 [Note 7]
         
@@ -389,3 +355,32 @@ http://www.ietf.org/rfc/rfc3986.txt ######[33]
 | OGC08-131r3 The Specification Model — A Standard for Modular
 specifications
 https://portal.opengeospatial.org/files/?artifact\_id=34762
+
+.. [1]
+   A row record for a tile table must be inserted into this table before
+   row records can be inserted into the tile\_matrix\_metadata table
+   described in clause 10.4 due to the presence of foreign key and other
+   integrity constraints on that table.
+
+.. [2]
+   GeoPackage applications that insert, update, or delete tiles (matrix
+   set) table tiles row records are responsible for maintaining the
+   corresponding descriptive contents of the tile\_table\_metadata
+   table.
+
+.. [3]
+   Most tile pyramids have an origin at the upper left, a convention
+   adopted by the OGC `Web Map Tile Service
+   (WMTS) <http://portal.opengeospatial.org/files/?artifact_id=35326>`__,
+   but some such as
+   `TMS <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`__
+   used by `MB-Tiles <https://github.com/mapbox/mbtiles-spec>`__ have an
+   origin at the lower left. Most tile pyramids, such as `Open Street
+   Map <http://wiki.openstreetmap.org/wiki/Main_Page>`__,
+   `OSMDroidAtlas <http://wiki.openstreetmap.org/wiki/Main_Page>`__, and
+   `FalconView <http://www.falconview.org/trac/FalconView>`__ use a
+   zoom\_out\_level of 0 for the smallest map scale “whole world” zoom
+   level view, another convention adopted by WMTS, but some such as `Big
+   Planet Tracks <http://code.google.com/p/big-planet-tracks/>`__ invert
+   this convention and use 0 or 1 for the largest map scale “local
+   detail” zoom level view.
