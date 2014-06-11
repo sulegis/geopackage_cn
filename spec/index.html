@@ -83,10 +83,10 @@ Document language: 	English<br></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_abstract">Abstract</h2>
+<h2 id="_">摘要</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This OGC® Encoding Standard defines GeoPackages for exchange and GeoPackage SQLite Extensions for direct use of vector geospatial features and / or tile matrix sets of earth images and raster maps at various scales. Direct use means the ability to access and update data in a "native" storage format without intermediate format translations in an environment (e.g. through an API) that guarantees data model and data set integrity and identical access and update results in response to identical requests from different client applications.  GeoPackages are interoperable across all enterprise and personal computing environments, and are particularly useful on mobile devices like cell phones and tablets in communications environments with limited connectivity and bandwidth.</p>
+<p>OGC® 编码标准定义了用于数据交换的GeoPackage协议，定义了GeoPackage SQLite扩展用于在多种比例尺级别直接使用矢量地理空间要素信息，以及地球影像、栅格地图的瓦片矩阵集合。直接使用意味着有能力以原生（native）的格式访问和更新数据，而不需要中间格式转换（例如，通过API），这样能确保数据模型和数据集的完整性，以及在对来自各个不同的客户端的请求进行响应时，返回完全相同的访问、更新结果。geopackages是可互操作的所有企业和个人计算环境，在移动设备上特别有用，如有限的带宽通信环境中的手机和平板电脑。</p>
 </div>
 </div>
 </div>
@@ -104,18 +104,18 @@ Document language: 	English<br></p>
 <ul class="sectlevel1">
 <li><a href="#_license_agreement">License Agreement</a></li>
 <li><a href="#_patent_call">Patent Call</a></li>
-<li><a href="#_abstract">Abstract</a></li>
+<li><a href="#_">摘要</a></li>
 <li><a href="#_keywords">Keywords</a></li>
-<li><a href="#_introduction">Introduction</a></li>
-<li><a href="#_base">1. Base</a></li>
+<li><a href="#__2">介绍</a></li>
+<li><a href="#__3">1. 基础</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#_core">1.1. Core</a></li>
+<li><a href="#__4">1.1. 核心</a></li>
 <li>
 <ul class="sectlevel3">
-<li><a href="#_sqlite_container">1.1.1. SQLite Container</a></li>
-<li><a href="#spatial_ref_sys">1.1.2. Spatial Reference Systems</a></li>
-<li><a href="#_contents">1.1.3. Contents</a></li>
+<li><a href="#_sqlite">1.1.1. SQLite 容器</a></li>
+<li><a href="#spatial_ref_sys">1.1.2. Spatial Reference Systems 空间参考系统</a></li>
+<li><a href="#__9">1.1.3. 内容</a></li>
 </ul>
 </li>
 </ul>
@@ -127,7 +127,7 @@ Document language: 	English<br></p>
 <li>
 <ul class="sectlevel3">
 <li><a href="#sfsql_intro">2.1.1. Simple Features SQL Introduction</a></li>
-<li><a href="#_contents_2">2.1.2. Contents</a></li>
+<li><a href="#_contents">2.1.2. Contents</a></li>
 <li><a href="#gpb_format">2.1.3. Geometry Encoding</a></li>
 <li><a href="#sql_geometry_types">2.1.4. SQL Geometry Types</a></li>
 <li><a href="#_geometry_columns">2.1.5. Geometry Columns</a></li>
@@ -138,7 +138,7 @@ Document language: 	English<br></p>
 <li>
 <ul class="sectlevel3">
 <li><a href="#_tile_matrix_introduction">2.2.1. Tile Matrix Introduction</a></li>
-<li><a href="#_contents_3">2.2.2. Contents</a></li>
+<li><a href="#_contents_2">2.2.2. Contents</a></li>
 <li><a href="#zoom_levels">2.2.3. Zoom Levels</a></li>
 <li><a href="#tile_enc_png">2.2.4. Tile Encoding PNG</a></li>
 <li><a href="#tile_enc_jpeg">2.2.5. Tile Encoding JPEG</a></li>
@@ -158,7 +158,7 @@ Document language: 	English<br></p>
 <li><a href="#_metadata">2.4. Metadata</a></li>
 <li>
 <ul class="sectlevel3">
-<li><a href="#_introduction_2">2.4.1. Introduction</a></li>
+<li><a href="#_introduction">2.4.1. Introduction</a></li>
 <li><a href="#_metadata_table">2.4.2. Metadata Table</a></li>
 <li><a href="#_metadata_reference_table">2.4.3. Metadata Reference Table</a></li>
 </ul>
@@ -166,7 +166,7 @@ Document language: 	English<br></p>
 <li><a href="#_extension_mechanism">2.5. Extension Mechanism</a></li>
 <li>
 <ul class="sectlevel3">
-<li><a href="#_introduction_3">2.5.1. Introduction</a></li>
+<li><a href="#_introduction_2">2.5.1. Introduction</a></li>
 <li><a href="#_extensions">2.5.2. Extensions</a></li>
 </ul>
 </li>
@@ -198,10 +198,10 @@ Document language: 	English<br></p>
 <li><a href="#abstract_test_suite"> Annex A: Conformance / Abstract Test Suite (Normative)</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#_base_2">A.1. Base</a></li>
+<li><a href="#_base">A.1. Base</a></li>
 <li>
 <ul class="sectlevel3">
-<li><a href="#_core_2">A.1.1. Core</a></li>
+<li><a href="#_core">A.1.1. Core</a></li>
 </ul>
 </li>
 <li><a href="#_options_2">A.2. Options</a></li>
@@ -290,39 +290,32 @@ Document language: 	English<br></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="__2">介绍</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mobile device users who require map/geospatial application services and operate in disconnected or limited network connectivity environments are challenged by limited storage capacity and the lack of open format geospatial data to support these applications.
-The current situation is that each map/geospatial application requires its own potentially proprietary geospatial data store.
-These separate application-specific data stores may contain the same geospatial data, wasting the limited storage available, and requiring custom applications for data translation, replication, and synchronization to enable different map/geospatial applications to share the same world view. In addition, many existing geospatial data stores are platform-specific, which means that users with different platforms must translate data to share it.</p>
+<p>想要在网络连接中断或是受限的环境下，获取和使用地图或地理空间信息应用服务的移动设备用户，会受到有限的存储容量和缺乏开放格式的地理空间数据去支持这些应用的挑战。目前的情况是，每一个地图和地理空间应用程序都需要自己潜在的专有的地理空间数据存储。这些独立的应用程序数据可能包含相同的地理空间数据，浪费了有限的可用的存储空间，并要求自定义应用程序对数据进行转换、复制和同步，使不同的地图和地理空间应用程序能够被世界识别认同。此外，许多现有的地理空间数据存储需要具体的平台，这意味着使用不同的平台的用户必须转化数据以实现共享。</p>
 </div>
 <div class="paragraph">
-<p>An open, standards-based, application-independent, platform-independent, portable, interoperable, self-describing, GeoPackage (GPKG) data container, API and manifest are needed to overcome these challenges and to effectively support multiple map/geospatial applications such as fixed product distribution, local data collection, and geospatially enabled analytics.
-This standard is intended to facilitate widespread adoption and use of GeoPackages by both COTS and open-source software applications on enterprise production platforms as well as mobile hand-held devices <a href="#B1">[B1]</a> <a href="#B2">[B2]</a>, given that mobile hand held devices do not yet have the processing power or battery life to effectively tackle difficult geospatial product production and analysis tasks.
-An application that accesses a GPKG will make use of the GPKG capabilities it requires; few if any such applications will make use of all GPKG capabilities.</p>
+<p>一个开放的、基于标准的、独立于应用程序的、独立于平台的、便携的、可互操作的、可自定义的、geopackage（gpkg）数据容器，API和表现需要克服这些挑战，去有效地支持多个地图和地理空间应用，如固定的产品分布，本地数据收集，和地理空间分析功能。
+本标准的目的是促进GeoPackages的广泛采用，和通过COTS和开源软件应用在企业生产平台以及移动手持设备上使用GeoPackages，考虑到移动手持设备还没有，通过处理电源或电池寿命来有效地解决困难的地理空间产品的生产和分析的任务。
+一个访问了gpkg的应用程序将使用它需要的gpkg能力；很少有这样的应用程序将利用一切gpkg能力。</p>
 </div>
 <div class="paragraph">
-<p>This OGC® Encoding Standard defines GeoPackages for exchange and GeoPackage SQLite Extensions for direct use of vector geospatial features and / or tile matrix sets of earth images and raster maps at various scales.
-Direct use means the ability to access and update data in a “native” format without intermediate format translations in an environment (e.g. through an API) that guarantees data model and data set integrity and identical access and update results in response to identical requests from different client applications.</p>
+<p>OGC®  编码标准定义了用于数据交换的GeoPackage协议，定义了GeoPackage SQLite扩展用于在多种比例尺级别直接使用矢量地理空间要素信息，以及地球影像、栅格地图的瓦片矩阵集合。直接使用意味着有能力以原生（native）的格式访问和更新数据，而不需要中间格式转换（例如，通过API），这样能确保数据模型和数据集的完整性，以及在对来自各个不同的客户端的请求进行响应时，返回完全相同的访问、更新结果。</p>
 </div>
 <div class="paragraph">
-<p>A <strong>GeoPackage</strong> is a platform-independent SQLite <a href="#5">[5]</a> database file that contains GeoPackage data and metadata tables shown in <a href="#geopackage_tables_figure">GeoPackage Tables Overview</a> below, with specified definitions, integrity assertions, format limitations and content constraints.
-The allowable content of a GeoPackage is entirely defined in this specification.</p>
+<p><strong>GeoPackage</strong>是一个独立于平台的SQLite <a href="#5">[5]</a>数据库文件，包含geopackage数据和元数据表如<a href="#geopackage_tables_figure">GeoPackage Tables Overview</a> 所示，规范的定义，完整的声明，格式和内容的约束限制。geopackage允许的内容在规范中进行了完全定义。扩展后的geopackage包含任何额外的数据元素（表或列）或SQL结构（数据类型，功能，指标，约束或触发器），这些在标准的规范中不支持。</p>
 </div>
 <div class="paragraph">
 <p>An <strong>Extended GeoPackage</strong> is a <strong>GeoPackage</strong> that contains any additional data elements (tables or columns) or SQL constructs (data types, functions, indexes, constraints or triggers) that are not specified in this encoding standard.</p>
 </div>
 <div class="paragraph">
-<p>A <strong>GeoPackage</strong> MAY be “empty” (contain user data table(s) for vector features and/or tile matrix pyramids with no row record content) or contain one or many vector feature type records and /or one or many tile matrix pyramid tile images.
-GeoPackage metadata CAN describe GeoPackage data contents and identify external data synchronization sources and targets.
-A GeoPackage MAY contain spatial indexes on feature geometries and SQL triggers to maintain indexes and enforce content constraints.</p>
+<p><strong>GeoPackage</strong> 可能为“空”（包含存储矢量要素和没有行记录内容的瓦片金字塔矩阵的用户数据表），也可能为包含一个或多个矢量特征类型的记录或一个或多个瓦片金字塔图像矩阵。geopackage元数据（CAN）描述了geopackage数据内容和识别外部数据同步的源和目标。
+Geopackage可能包含具有空间索引的几何要素和用于维护索引和执行内容约束的SQL触发器。</p>
 </div>
 <div class="paragraph">
-<p>A <strong>GeoPackage SQLite Configuration</strong> consists of the SQLite 3 software library and a set of compile- and runtime configurations options.</p>
-</div>
-<div class="paragraph">
-<p>A <strong>GeoPackage SQLite Extension</strong> is a SQLite loadable extension that MAY provide SQL functions <a href="#12">[12]</a> to support spatial indexes and SQL triggers linked to a SQLite library with specified configuration requirements to provide SQL API <a href="#1">[1]</a> <a href="#2">[2]</a> <a href="#3">[3]</a> <a href="#4">[4]</a> access to a GeoPackage file. This standard does not address the issues listed in the <a href="#_potential_future_work">[_potential_future_work]</a> clause in <a href="#background_and_context">Background and Context (Normative)</a>, which MAY be addressed in a subsequent version of this specification or by other specifications.</p>
+<p>A <strong>GeoPackage SQLite Configuration</strong> consists of the SQLite 3 software library and a set of compile- and runtime configurations options.
+<strong>Geopackage SQLite配置项</strong>由SQLite 3软件库和一组编译和运行时配置选项组成。<strong>Geopackage SQLite Extension</strong>是一个SQLite加载的扩展项，可以提供支持空间索引和SQL触发器的SQL功能<a href="#12">[12]</a> 。SQL触发器与具有指定配置要求的SQL库关联，指定的配置要求提供SQL API <a href="#1">[1]</a> <a href="#2">[2]</a> <a href="#3">[3]</a> <a href="#4">[4]</a>访问geopackage。本标准不解决在潜在的未来工作条款附录B（the <a href="#_potential_future_work">[_potential_future_work]</a> clause in <a href="#background_and_context">Background and Context (Normative)</a>）中列出的问题，它可能在后续版本规范或其他规范中解决。</p>
 </div>
 <div id="geopackage_tables_figure" class="imageblock">
 <div class="content">
@@ -333,36 +326,28 @@ A GeoPackage MAY contain spatial indexes on feature geometries and SQL triggers 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_base">1. Base</h2>
+<h2 id="__3">1. 基础</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The required capabilities specified in this clause serve as the base for options specified in clause <a href="#_options">Options</a> and extensions specified in clause <a href="#_registered_extensions">Registered Extensions</a>.
-All gpkg_* tables and views and all tiles user data tables specified in this standard SHALL have only the specified columns and table constraints. Any features user data tables MAY have columns in addition to those specified.
-All specified table and column name values SHALL be lowercase.</p>
+<p>在这个条款中指定的需要的能力作为基础选项，指定第2款规定<a href="#_options">Options</a>和扩展第3条款规定<a href="#_registered_extensions">Registered Extensions</a>。
+在这种标准下的所有gpkg_ *表和视图和所有瓦片用户数据表只有指定的列和表约束。任何用户数据表可能除了指定的列还有其他列。
+所有指定的表和列的名称值将使用小写。</p>
 </div>
 <div class="sect2">
-<h3 id="_core">1.1. Core</h3>
+<h3 id="__4">1.1. 核心</h3>
 <div class="paragraph">
-<p>The mandatory core capabilities defined in sub clauses and requirement statements of this clause SHALL be implemented by every <strong>GeoPackage</strong> and <strong>GeoPackage SQLite Configuration</strong>.</p>
+<p>在子条款和本条款的要求中定义的强制性核心能力应当由每个<strong>GeoPackage</strong>和<strong>GeoPackage SQLite的配置</strong>来实现。</p>
 </div>
 <div class="sect3">
-<h4 id="_sqlite_container">1.1.1. SQLite Container</h4>
+<h4 id="_sqlite">1.1.1. SQLite 容器</h4>
 <div class="paragraph">
-<p>The SQLite software library provides a self-contained, single-file, cross-platform, serverless, transactional, open source RDBMS container.
-The GeoPackage specification defines a SQL database schema designed for use with the SQLite software library.
-Using SQLite as the basis for GeoPackage simplifies production, distribution and use of GeoPackages and assists in guaranteeing the integrity of the data they contain.</p>
-</div>
-<div class="paragraph">
-<p>“Self-contained” means that container software requires very minimal support from external libraries or from the operating system.
-“Single-file” means that a container not currently opened by any software application consists of a single file in a file system supported by a computing platform operating system.
-“Cross-platform” means that a container file MAY be created and loaded with data on one computing platform, and used and updated on another, even if they use different operating systems, file systems, and byte order (endian) conventions.
-“Serverless” means that the RDBMS container is implemented without any intermediary server process, and accessed directly by application software.
-“Transactional” means that RDBMS transactions guarantee that all changes to data in the container are Atomic, Consistent, Isolated, and Durable (ACID) despite program crashes, operating system crashes, and power failures.</p>
+<p>The SQLite software library provides a self-contained, single-file, cross-platform, serverless, transactional, open source RDBMS SQLite的软件库提供了一个自包含的，单文件，跨平台的，无服务器，事务性的，开放源码的RDBMS的容器。该geopackage规范定义了一个SQL数据库方案，此方案采用SQLite的软件库。使用SQLite作为geopackage的基础，简化了生产，分配和使用了geopackages，保证它们所包含的数据的完整性和协助。
+“自包含”是指容器的软件需要来自外部库或操作系统很小的支持。 “单个文件”是指一个容器当前没有打开任何应用软件，包含由计算平台的操作系统支持的文件系统中的单个文件。 “跨平台”指的是一个容器文件可以创建和加载在一个计算平台的数据，并在另一个平台上使用和更新，即使他们使用不同的操作系统，文件系统和字节顺序（endian）的约定。 “无服务器”指的是RDBMS容器在没有任何中介服务器进程下实现，并直接由应用软件进行访问。 “交易”是指RDBMS交易保证尽管程序崩溃，操作系统崩溃，和电源故障，在容器中所有的数据改变仍是原子性，一致性，隔离和持久的（ACID）。</p>
 </div>
 <div class="sect4">
-<h5 id="_data">1.1.1.1. Data</h5>
+<h5 id="__5">1.1.1.1. 数据</h5>
 <div class="sect5">
-<h6 id="_file_format">1.1.1.1.1. File Format</h6>
+<h6 id="__6">1.1.1.1.1. 文件格式</h6>
 <div id="_requirement-1" class="quoteblock">
 <div class="title">Requirement 1</div>
 <blockquote>
@@ -373,13 +358,11 @@ The first 16 bytes of a GeoPackage SHALL contain “SQLite format 3” <span cla
 <div id="_requirement-2" class="quoteblock">
 <div class="title">Requirement 2</div>
 <blockquote>
-A GeoPackage SHALL contain 0x47503130 ("GP10" in ASCII) in the application id field of the SQLite database header to indicate a GeoPackage version 1.0 file. <span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span>
+SQLite数据库头的应用ID字段应包含0x47503130（在ASCII 中的“10”），来表明是geopackage 1.0 版文件。 <span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span>
 </blockquote>
 </div>
 <div class="paragraph">
-<p>The maximum size of a GeoPackage file is about 140TB.
-In practice a lower size limit MAY be imposed by the filesystem to which the file is written.
-Many mobile devices require external memory cards to be formatted using the FAT32 file system which imposes a maximum size limit of 4GB.</p>
+<p>GeoPackage的最大存储空间约为140TB。在实际应用中，较低存储空间可能受写入文件系统中的文件限制。许多移动设备需要外部存储卡，这些外部存储卡可以使用增加了4GB最大大小的FAT32文件系统进行格式化。</p>
 </div>
 </div>
 <div class="sect5">
@@ -387,29 +370,32 @@ Many mobile devices require external memory cards to be formatted using the FAT3
 <div id="_requirement-3" class="quoteblock">
 <div class="title">Requirement 3</div>
 <blockquote>
-A GeoPackage SHALL have the file extension name “.gpkg”.
+geopackage应当有文件扩展名“*.gpkg”。
 </blockquote>
 </div>
 <div class="paragraph">
-<p>It is RECOMMENDED that Extended GeoPackages use the file extension “.gpkx”, but this is NOT a GeoPackage requirement.</p>
+<p>推荐扩展geopackages 使用文件扩展名”*.gpkx”，但这不是geopackage规范要求。</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_file_contents">1.1.1.1.3. File Contents</h6>
+<h6 id="__7">1.1.1.1.3. 文件内容</h6>
 <div id="_requirement-4" class="quoteblock">
 <div class="title">Requirement 4</div>
 <blockquote>
 A GeoPackage SHALL only contain data elements, SQL constructs and GeoPackage extensions with the “gpkg” author name specified in this encoding standard.
+geopackage应只包含数据元素，SQL构造和带有“.gpkg”的GeoPackage扩展。使用这种编码标准指定作者的名字。
 </blockquote>
 </div>
 <div class="paragraph">
 <p>In order to guarantee maximum interoperability between applications, GeoPackages SHALL NOT contain data elements (tables or columns), SQL constructs (data types, indexes, constraints or triggers) or extensions that are not specified in this encoding standard.
-SQLite databases that use constructs from the GeoPackage specification but extend that to contain any of these elements are referred to as Extended GeoPackages throughout this specification.</p>
+SQLite databases that use constructs from the GeoPackage specification but extend that to contain any of these elements are referred to as Extended GeoPackages throughout this specification.
+为了保证应用程序之间最大的互操作性，geopackages应该不包含数据元素（表或列），SQL结构（数据类型，索引，约束或触发器）或者未使用此编码标准指定的扩展。SQLite数据库使用由geopackage规范指定但是可扩展的结构，扩展后包含任何元素被称为扩展geopackages使用整个规范。</p>
 </div>
 <div id="_requirement-5" class="quoteblock">
 <div class="title">Requirement 5</div>
 <blockquote>
 The columns of tables in a GeoPackage SHALL only be declared using one of the data types specified in table <a href="#table_column_data_types">GeoPackage Data Types</a>.
+geopackage表列应仅使用在表1中指定的数据类型进行申明
 </blockquote>
 </div>
 <table id="table_column_data_types" class="tableblock frame-all grid-all" style="width:100%; ">
@@ -420,75 +406,78 @@ The columns of tables in a GeoPackage SHALL only be declared using one of the da
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Data Type</th>
-<th class="tableblock halign-left valign-top">Size and Description</th>
+<th class="tableblock halign-left valign-top">数据类型</th>
+<th class="tableblock halign-left valign-top">大小与说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BOOLEAN</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A boolean value representing true or false. Stored as SQLite INTEGER with value 0 for false or 1 for true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A boolean value representing true or false. Stored as SQLite INTEGER with value 0 for false or 1 for true .布尔逻辑的值是true或false
+存储为SQLite的整数，值0代表false，1代表true</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TINYINT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-128, 127]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-128, 127] 8位带符号二进制整形补码
+存储为SQLite的整数，值的范围是[-128, 127]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-32768, 32767]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-32768, 32767] 16位有符号二进制补码整数
+存储为SQLite的整数，值的范围是[-32768，32767]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MEDIUMINT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">32-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-2147483648, 2147483647].32位有符号二进制补码整数.存储为SQLite的整数，值的范围是[-2147483648, 2147483647]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT, INTEGER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">64-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64-bit signed two&#8217;s complement integer. Stored as SQLite INTEGER with values in the range [-9223372036854775808, 9223372036854775807].64位有符号二进制补码整数.存储为SQLite的整数，值的范围是[-9223372036854775808, 9223372036854775807]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FLOAT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">32-bit IEEE floating point number. Stored as SQLite REAL limited to values that can be represented as a 4-byte IEEE floating point number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32-bit IEEE floating point number. Stored as SQLite REAL limited to values that can be represented as a 4-byte IEEE floating point number.32位IEEE 浮点数.存储为SQLite的实限值可以被表示为一个4字节的IEEE浮点数</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DOUBLE, REAL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">64-bit IEEE floating point number. Stored as SQLite REAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64-bit IEEE floating point number. Stored as SQLite REAL.64位IEEE 浮点数.存储为SQLite的实际值</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TEXT{(maxchar_count)}</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variable length string encoded in either UTF-8 or UTF-16, determined by PRAGMA encoding; see <a href="http://www.sqlite.org/pragma.html#pragma_encoding">http://www.sqlite.org/pragma.html#pragma_encoding</a>. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. The count is provided for informational purposes, and applications MAY choose to truncate longer strings if encountered. When present, it is best practice for applications to adhere to the character count. Stored as SQLite TEXT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variable length string encoded in either UTF-8 or UTF-16, determined by PRAGMA encoding; see <a href="http://www.sqlite.org/pragma.html#pragma_encoding">http://www.sqlite.org/pragma.html#pragma_encoding</a>. The optional maxchar_count defines the maximum number of characters in the string. If not specified, the length is unbounded. The count is provided for informational purposes, and applications MAY choose to truncate longer strings if encountered. When present, it is best practice for applications to adhere to the character count. Stored as SQLite TEXT.由PRAGMA编码决定是使用UTF-8还是UTF-16编码长度可变的字符串;可参考http://www.sqlite.org/pragma.html#pragma_encoding  .可选参数maxchar_count定义了字符串中最大字符数目。如果未指定，则长度是无限的。计数是为了提供信息，还有当遇到问题时，在应用中可以选择截断更长的字符串。如果指定，它是坚持字数统计的最佳实际应用。存储为文本的SQLite</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BLOB{(max_size)}</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded. The size is provided for informational purposes. When present, it is best practice for applications adhere to the maximum blob size. Stored as SQLite BLOB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variable length binary data. The optional max_size defines the maximum number of bytes in the blob. If not specified, the length is unbounded. The size is provided for informational purposes. When present, it is best practice for applications adhere to the maximum blob size. Stored as SQLite BLOB.长度可变的二进制数据。  可选的max_size在blob中定义了最大字节数。如果未指定，则长度是无限的。大小提供了信息参考。如果指定，它是符合最大BLOB大小的最佳实际应用。存储为SQLite的BLOB</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;geometry_type_name&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geometry encoded as per clause <a href="#_geometry_encoding">Geometry Encoding</a>. &lt;geometry type_name&gt; is one of the geometry types listed in <a href="#geometry_types">Geometry Types (Normative)</a> encoded per clause 2.1.3 or a user-defined geometry type encoded per clause 3.1.2 and <a href="#extension_geometry_encoding">User-Defined Geometry Types Encoding Extension Template (Normative)</a>. Geometry Types XY, XYZ, XYM and XYZM geometries use the same data type. Stored as SQLite BLOB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometry encoded as per clause <a href="#_geometry_encoding">Geometry Encoding</a>. &lt;geometry type_name&gt; is one of the geometry types listed in <a href="#geometry_types">Geometry Types (Normative)</a> encoded per clause 2.1.3 or a user-defined geometry type encoded per clause 3.1.2 and <a href="#extension_geometry_encoding">User-Defined Geometry Types Encoding Extension Template (Normative)</a>. Geometry Types XY, XYZ, XYM and XYZM geometries use the same data type. Stored as SQLite BLOB.&lt;geometry type_name&gt;是一种几何类型，在附录E中列出，每个句子都经过了编码。 2.1.3或3.1.2条和附录K中用户自定义的每个句子经过编码的几何数据类型。几何类型XY，XYZ，XYM和XYZM的几何要素使用的是相同数据类型。存储为BLOB的SQLite</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DATE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO-8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. See TEXT. Stored as SQLite TEXT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO-8601 date string in the form YYYY-MM-DD encoded in either UTF-8 or UTF-16. See TEXT. Stored as SQLite TEXT.以YYYY-MM-DD这种形式存在的，ISO-8601日期字符串，用UTF-8或UTF-16方式进行编码。请参见正文。 存储为文本的SQLite</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DATETIME</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. See TEXT. Stored as SQLite TEXT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO-8601 date/time string in the form YYYY-MM-DDTHH:MM:SS.SSSZ with T separator character and Z suffix for coordinated universal time (UTC) encoded in either UTF-8 or UTF-16. See TEXT. Stored as SQLite TEXT.以YYYY-MM-DDTHH：MM：SS.SSSZ形式存的，ISO-8601日期/时间字符串，以T分隔符和Z后缀，使用UTF-8或UTF-16编码协调世界时(UTC)。请参见正文。存储为文本的SQLite</p></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 <div class="sect5">
-<h6 id="_file_integrity">1.1.1.1.4. File Integrity</h6>
+<h6 id="_file_integrity">1.1.1.1.4. File Integrity文件完整</h6>
 <div id="_requirement-6" class="quoteblock">
 <div class="title">Requirement 6</div>
 <blockquote>
-The SQLite PRAGMA integrity_check SQL command SHALL return “ok” for a GeoPackage file.
+The SQLite PRAGMA integrity_check SQL command SHALL return “ok” for a GeoPackage file.使用SQLite语法中的integrity_check SQL命令，将为GeoPackage返回“OK”。
 </blockquote>
 </div>
 <div id="_requirement-7" class="quoteblock">
 <div class="title">Requirement 7</div>
 <blockquote>
-The SQLite PRAGMA foreign_key_check SQL with no parameter value SHALL return an empty result set indicating no invalid foreign key values for a GeoPackage file.
+The SQLite PRAGMA foreign_key_check SQL with no parameter value SHALL return an empty result set indicating no invalid foreign key values for a GeoPackage file.使用SQLite语法中不带参数值的foreign_key_check SQL命令，将返回一个空的结果集，表示geopackage没有无效的外键值。
 </blockquote>
 </div>
 </div>
@@ -496,27 +485,28 @@ The SQLite PRAGMA foreign_key_check SQL with no parameter value SHALL return an 
 <div class="sect4">
 <h5 id="_api">1.1.1.2. API</h5>
 <div class="sect5">
-<h6 id="api_sql">1.1.1.2.1. Structured Query Language (SQL)</h6>
+<h6 id="api_sql">1.1.1.2.1. Structured Query Language (SQL)结构化查询语言（SQL）</h6>
 <div id="_requirement-8" class="quoteblock">
 <div class="title">Requirement 8</div>
 <blockquote>
-A GeoPackage SQLite Configuration SHALL provide SQL access to GeoPackage contents via <a href="http://www.sqlite.org/download.html">SQLite version 3</a> <a href="#6">[6]</a> software APIs. <span class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</span>
+A GeoPackage SQLite Configuration SHALL provide SQL access to GeoPackage contents via <a href="http://www.sqlite.org/download.html">SQLite version 3</a> <a href="#6">[6]</a> software APIs.GeoPackage SQLite的配置应该提供通过SQLite3版本软件的API， 使SQL可访问GeoPackage的内容。 <span class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</span>
 </blockquote>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_every_gpkg_sqlite_configuration">1.1.1.2.2. Every GPKG SQLite Configuration</h6>
+<h6 id="_every_gpkg_sqlite_configuration_geopackage_sqlite">1.1.1.2.2. Every GPKG SQLite Configuration Geopackage SQLite 的配置</h6>
 <div class="paragraph">
-<p>The <a href="http://www.sqlite.org/download.html">SQLite</a> <a href="#8">[8]</a> library has many <a href="http://www.sqlite.org/compile.html">compile time</a> and <a href="http://www.sqlite.org/pragma.html">run time</a> options that MAY be used to configure SQLite for different uses. Certain elements of the GeoPackage specification depend on the availability of SQLite functionality at runtime. This clause specifies the set of compile- and runtime options that SHALL or SHALL NOT be used.</p>
+<p>The <a href="http://www.sqlite.org/download.html">SQLite</a> <a href="#8">[8]</a> library has many <a href="http://www.sqlite.org/compile.html">compile time</a> and <a href="http://www.sqlite.org/pragma.html">run time</a> options that MAY be used to configure SQLite for different uses. Certain elements of the GeoPackage specification depend on the availability of SQLite functionality at runtime. This clause specifies the set of compile- and runtime options that SHALL or SHALL NOT be used.
+SQLite软件有许多编译和运行时的选项，可用于针对不同用途配置SQLite 。该GeoPackage规范的某些内容依赖于SQLite在运行时功能的可用性。这个子句指定了应该或是不应该被使用的一系列编译和运行时选项。</p>
 </div>
 <div id="_requirement-9" class="quoteblock">
 <div class="title">Requirement 9</div>
 <blockquote>
-Every GeoPackage SQLite Configuration SHALL have the SQLite library compile and run time options specified in table <a href="#every_gpkg_sqlite_config_table">Every GeoPackage SQLite Configuration</a>.
+Every GeoPackage SQLite Configuration SHALL have the SQLite library compile and run time options specified in table <a href="#every_gpkg_sqlite_config_table">Every GeoPackage SQLite Configuration GeoPackage SQLite 配置</a>.每个geopackage SQLite配置应该有在第1.1.1.2.2Table2中指定的SQLite软件运行和编译时的选项。
 </blockquote>
 </div>
 <table id="every_gpkg_sqlite_config_table" class="tableblock frame-all grid-all" style="width:100%; ">
-<caption class="title">Table 2. Every GeoPackage SQLite Configuration</caption>
+<caption class="title">Table 2. Every GeoPackage SQLite Configuration GeoPackage SQLite 配置</caption>
 <colgroup>
 <col style="width:%;">
 <col style="width:%;">
@@ -536,13 +526,13 @@ Every GeoPackage SQLite Configuration SHALL have the SQLite library compile and 
 <td class="tableblock halign-left valign-top"><p class="tableblock">compile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SQLITE_OMIT_*</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SHALL NOT include any OMIT options from <a href="http://www.sqlite.org/compile.html#omitfeatures">http://www.sqlite.org/compile.html#omitfeatures</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SHALL NOT include any OMIT options from <a href="http://www.sqlite.org/compile.html#omitfeatures">http://www.sqlite.org/compile.html#omitfeatures</a>. 不应该包括任何OMIT选项，来源于http://www.sqlite.org/compile.html#omitfeatures.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">run</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PRAGMA foreign_keys</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not (OFF)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Foreign key constraints are used to maintain GeoPackage referential integrity.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Foreign key constraints are used to maintain GeoPackage referential integrity.外键约束用来维持GeoPackage关系的完整性</p></td>
 </tr>
 </tbody>
 </table>
@@ -551,27 +541,29 @@ Every GeoPackage SQLite Configuration SHALL have the SQLite library compile and 
 </div>
 </div>
 <div class="sect3">
-<h4 id="spatial_ref_sys">1.1.2. Spatial Reference Systems</h4>
+<h4 id="spatial_ref_sys">1.1.2. Spatial Reference Systems 空间参考系统</h4>
 <div class="sect4">
-<h5 id="_data_2">1.1.2.1. Data</h5>
+<h5 id="__8">1.1.2.1. 数据</h5>
 <div class="sect5">
-<h6 id="spatial_ref_sys_data_table_definition">1.1.2.1.1. Table Definition</h6>
+<h6 id="spatial_ref_sys_data_table_definition">1.1.2.1.1. 表的定义</h6>
 <div id="_requirement-10" class="quoteblock">
 <div class="title">Requirement 10</div>
 <blockquote>
-A GeoPackage SHALL include a <code>gpkg_spatial_ref_sys</code> table per clause 1.1.2.1.1 <a href="#spatial_ref_sys_data_table_definition">Table Definition</a>, Table <a href="#gpkg_spatial_ref_sys_cols">Spatial Ref Sys Table Definition</a> and Table <a href="#gpkg_spatial_ref_sys_sql">gpkg_spatial_ref_sys Table Definition SQL</a>.
+A GeoPackage SHALL include a <code>gpkg_spatial_ref_sys</code> table per clause 1.1.2.1.1 <a href="#spatial_ref_sys_data_table_definition">表的定义</a>, Table <a href="#gpkg_spatial_ref_sys_cols">Spatial Ref Sys Table Definition 空间参考系统表的定义</a> and Table <a href="#gpkg_spatial_ref_sys_sql">gpkg_spatial_ref_sys Table Definition SQL</a>.geopackage规范应包括gpkg_spatial_ref_sys表的每项条款
 </blockquote>
 </div>
 <div class="paragraph">
 <p>A table named <code>gpkg_spatial_ref_sys</code> is the first component of the standard SQL schema for simple features described in clause <a href="#sfsql_intro">Simple Features SQL Introduction</a> below.
-The coordinate reference system definitions it contains are referenced by the GeoPackage <code>gpkg_contents</code> and <code>gpkg_geometry_columns</code> tables to relate the vector and tile data in user tables to locations on the earth.</p>
+The coordinate reference system definitions it contains are referenced by the GeoPackage <code>gpkg_contents</code> and <code>gpkg_geometry_columns</code> tables to relate the vector and tile data in user tables to locations on the earth.
+名为gpkg_spatial_ref_sys表是标准SQL模式的第一个部分。在下面的2.1.1中描述了简单功能。坐标参考系统的定义，它包含引用的geopackage gpkg_contents和gpkg_geometry_columns表，以及与表关联的用用户表中的矢量和瓦片数据在地球上定位。</p>
 </div>
 <div class="paragraph">
-<p>The <code>gpkg_spatial_ref_sys</code> table includes at a minimum the columns specified in SQL/MM (ISO 13249-3) <a href="#12">[12]</a> and shown in <a href="#gpkg_spatial_ref_sys_cols">Spatial Ref Sys Table Definition</a> below containing data that defines spatial reference systems.
-Views of this table MAY be used to provide compatibility with the <a href="http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=53698">SQL/MM</a> <a href="#12">[12]</a> (see <a href="#sqlmm_gpkg_spatial_ref_sys_sql">SQL/MM View of gpkg_spatial_ref_sys Definition SQL (Informative)</a>) and OGC <a href="http://portal.opengeospatial.org/files/?artifact_id=25354">Simple Features SQL</a> <a href="#9">[9]</a><a href="#10">[10]</a><a href="#11">[11]</a> (Table 21) specifications.</p>
+<p>The <code>gpkg_spatial_ref_sys</code> table includes at a minimum the columns specified in SQL/MM (ISO 13249-3) <a href="#12">[12]</a> and shown in <a href="#gpkg_spatial_ref_sys_cols">Spatial Ref Sys Table Definition 空间参考系统表的定义</a> below containing data that defines spatial reference systems.
+Views of this table MAY be used to provide compatibility with the <a href="http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=53698">SQL/MM</a> <a href="#12">[12]</a> (see <a href="#sqlmm_gpkg_spatial_ref_sys_sql">SQL/MM View of gpkg_spatial_ref_sys Definition SQL (Informative)</a>) and OGC <a href="http://portal.opengeospatial.org/files/?artifact_id=25354">Simple Features SQL</a> <a href="#9">[9]</a><a href="#10">[10]</a><a href="#11">[11]</a> (Table 21) specifications.
+该gpkg_spatial_ref_sys表至少包括在SQL / MM（ISO13249-3）规定，和在下表3中展示出的列，表3中包含定义空间参考系统的数据。 此表的视图可以用于提供与SQL /毫米的兼容性（表19）和SQL（表20）规定的OGC简单要素。</p>
 </div>
 <table id="gpkg_spatial_ref_sys_cols" class="tableblock frame-all grid-all" style="width:100%; ">
-<caption class="title">Table 3. Spatial Ref Sys Table Definition</caption>
+<caption class="title">Table 3. Spatial Ref Sys Table Definition 空间参考系统表的定义</caption>
 <colgroup>
 <col style="width:%;">
 <col style="width:%;">
@@ -592,42 +584,42 @@ Views of this table MAY be used to provide compatibility with the <a href="http:
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>srs_name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TEXT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name of this SRS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name of this SRS 空间参考系统名字</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>srs_id</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for each Spatial Reference System within a GeoPackage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for each Spatial Reference System within a GeoPackage GeoPackage规范内每个空间参考系统唯一标识</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PK</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>organization</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TEXT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Case-insensitive name of the defining organization e.g. EPSG or epsg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Case-insensitive name of the defining organization e.g. EPSG or epsg 定义的组织不区分大小写，例如EPSG or epsg</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>organization_coordsys_id</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric ID of the Spatial Reference System assigned by the organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric ID of the Spatial Reference System assigned by the organization 由组织分配的空间参考系统的数字ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>definition</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TEXT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Well-known Text <a href="#32">[32]</a> Representation of the Spatial Reference System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Well-known Text <a href="#32">[32]</a> Representation of the Spatial Reference System 由文字标示的著名空间参考系统</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TEXT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable description of this SRS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable description of this SRS 空间参考系统描述</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -639,36 +631,37 @@ Views of this table MAY be used to provide compatibility with the <a href="http:
 </div>
 </div>
 <div class="sect5">
-<h6 id="_table_data_values">1.1.2.1.2. Table Data Values</h6>
+<h6 id="_table_data_values">1.1.2.1.2. Table Data Values 表中数据值</h6>
 <div class="paragraph">
-<p>Definition column WKT values in the gpkg_spatial_ref_sys table SHALL define the Spatial Reference Systems used by feature geometries and tile images, unless these SRS are unknown and therefore undefined as specified in <a href="#_requirement-11">Requirement 11</a>. Values SHALL be constructed per the EBNF syntax in <a href="#32">[32]</a> clause 7. Values SHALL include optional &lt;authority&gt; EBNF entities. Values for SRS other than WGS-84 SHOULD include optional &lt;to wgs84&gt; EBNF entities. Values MAY omit optional &lt;to wgs84&gt; and &lt;twin axes&gt; EBNF entities. EBNF name and number values MAY be obtained from any specified &lt;authority&gt;, e.g. <a href="#13">[13]</a><a href="#14">[14]</a>. For example, see the return value in <a href="#spatial_ref_sys_data_values_default">[spatial_ref_sys_data_values_default]</a> Test Method step (3) used to test the definition for WGS-84 per <a href="#_requirement-11">Requirement 11</a>:</p>
+<p>Definition column WKT values in the gpkg_spatial_ref_sys table SHALL define the Spatial Reference Systems used by feature geometries and tile images, unless these SRS are unknown and therefore undefined as specified in <a href="#_requirement-11">Requirement 11</a>. Values SHALL be constructed per the EBNF syntax in <a href="#32">[32]</a> clause 7. Values SHALL include optional &lt;authority&gt; EBNF entities. Values for SRS other than WGS-84 SHOULD include optional &lt;to wgs84&gt; EBNF entities. Values MAY omit optional &lt;to wgs84&gt; and &lt;twin axes&gt; EBNF entities. EBNF name and number values MAY be obtained from any specified &lt;authority&gt;, e.g. <a href="#13">[13]</a><a href="#14">[14]</a>. For example, see the return value in <a href="#spatial_ref_sys_data_values_default">[spatial_ref_sys_data_values_default]</a> Test Method step (3) used to test the definition for WGS-84 per <a href="#_requirement-11">Requirement 11</a>:
+在gpkg_spatial_ref_sys表中定义的WKT列值，将定义使用了集合要素和图片的空间参考系统。除非这些SRS是未知的，因此不需要在要求11中指定。值应该按第7条款中的EBNF语法构建。值应包括可选的&lt;局&gt; EBNF实体。SRS除了WGS-84外，应包括可选的&lt; WGS84 &gt; EBNF实体值。值可以忽略可选的&lt; WGS84 &gt;和&lt; &lt; WGS84双轴&gt; EBNF实体。EBNF的名字和号码的值可以从任何指定的&lt;局&gt;获得。例如，看到A.1.1.2.1.2试验方法步骤的返回值，用于测试每个请求11 的WGS-84坐标定义。</p>
 </div>
 <div id="_requirement-11" class="quoteblock">
 <div class="title">Requirement 11</div>
 <blockquote>
 The <code>gpkg_spatial_ref_sys</code> table in a GeoPackage SHALL contain a record for
-organization <a href="http://www.epsg.org/Geodetic.html">EPSG</a> or epsg <a href="#B3">[B3]</a> and <code>organization_coordsys_id</code> <a href="http://www.epsg-registry.org/report.htm?type=selection&amp;entity=urn:ogc:def:crs:EPSG::4326&amp;reportDetail=long&amp;title=WGS%2084&amp;style=urn:uuid:report-style:default-with-code&amp;style_name=OGP%20Default%20With%20Code">4326</a> <a href="#13">[13]</a><a href="#14">[14]</a> for <a href="http://www.google.com/search?as_q=WGS-84">WGS-84</a> <a href="#15">[15]</a>, a record with an <code>srs_id</code> of -1, an organization of “NONE”, an <code>organization_coordsys_id</code> of -1, and definition “undefined” for undefined Cartesian coordinate reference systems, and a record with an <code>srs_id</code> of 0, an organization of “NONE”, an <code>organization_coordsys_id</code> of 0, and definition “undefined” for undefined geographic coordinate reference systems.
+organization <a href="http://www.epsg.org/Geodetic.html">EPSG</a> or epsg <a href="#B3">[B3]</a> and <code>organization_coordsys_id</code> <a href="http://www.epsg-registry.org/report.htm?type=selection&amp;entity=urn:ogc:def:crs:EPSG::4326&amp;reportDetail=long&amp;title=WGS%2084&amp;style=urn:uuid:report-style:default-with-code&amp;style_name=OGP%20Default%20With%20Code">4326</a> <a href="#13">[13]</a><a href="#14">[14]</a> for <a href="http://www.google.com/search?as_q=WGS-84">WGS-84</a> <a href="#15">[15]</a>, a record with an <code>srs_id</code> of -1, an organization of “NONE”, an <code>organization_coordsys_id</code> of -1, and definition “undefined” for undefined Cartesian coordinate reference systems, and a record with an <code>srs_id</code> of 0, an organization of “NONE”, an <code>organization_coordsys_id</code> of 0, and definition “undefined” for undefined geographic coordinate reference systems.在符合geopackage规范的gpkg_spatial_ref_sys表中，应当包括组织EPSG或epsg和WGS-84的organization_coordsys_id 4326记录，一个为-1的srs_id记录，一个“无”组织，一个为-1 的organization_coordsys_id组织，为未定义的笛卡尔坐标参考系定义“未定义”， 一个为0的srs_id记录，一个“无”组织，一个为0 的organization_coordsys_id组织，为未定义的地理坐标参考系统定义“未定义”。
 </blockquote>
 </div>
 <div id="_requirement-12" class="quoteblock">
 <div class="title">Requirement 12</div>
 <blockquote>
-The <code>gpkg_spatial_ref_sys</code> table in a GeoPackage SHALL contain records to define all spatial reference systems used by features and tiles in a GeoPackage.
+The <code>gpkg_spatial_ref_sys</code> table in a GeoPackage SHALL contain records to define all spatial reference systems used by features and tiles in a GeoPackage.在符合geopackage规范的gpkg_spatial_ref_sys表中，应包含一些记录，去定义在GeoPackage中被被要素和瓦片使用的所有空间参考系统
 </blockquote>
 </div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_contents">1.1.3. Contents</h4>
+<h4 id="__9">1.1.3. 内容</h4>
 <div class="sect4">
-<h5 id="_data_3">1.1.3.1. Data</h5>
+<h5 id="__10">1.1.3.1. 数据</h5>
 <div class="sect5">
-<h6 id="_table_definition">1.1.3.1.1. Table Definition</h6>
+<h6 id="__11">1.1.3.1.1. 表定义</h6>
 <div id="_requirement-13" class="quoteblock">
 <div class="title">Requirement 13</div>
 <blockquote>
-A GeoPackage file SHALL include a <code>gpkg_contents</code> table per table <a href="#gpkg_contents_cols">Contents Table or View Definition</a> and <a href="#gpkg_contents_sql">gpkg_contents Table Definition SQL</a>.
+A GeoPackage file SHALL include a <code>gpkg_contents</code> table per table <a href="#gpkg_contents_cols">Contents Table or View Definition</a> and <a href="#gpkg_contents_sql">gpkg_contents Table Definition SQL</a>.geopackage包括的gpkg_contents表在本章节1.1.3.1.1，表4和表21中进行了描述。
 </blockquote>
 </div>
 <div class="paragraph">
@@ -837,7 +830,7 @@ A GeoPackage SHALL contain features per clause <a href="#features">Features</a> 
 <div class="paragraph">
 <p>Vector feature data represents geolocated entities including conceptual ones such as districts, real world objects such as roads and rivers, and observations thereof.
 International specifications <a href="#9">[9]</a><a href="#10">[10]</a><a href="#11">[11]</a><a href="#12">[12]</a> have standardized practices for the storage, access and use of vector geospatial features and geometries via SQL in relational databases.
-The first component of the SQL schema for vector features in a GeoPackage is the <code>gpkg_spatial_ref_sys</code> table defined in clause <a href="#spatial_ref_sys">Spatial Reference Systems</a> above.
+The first component of the SQL schema for vector features in a GeoPackage is the <code>gpkg_spatial_ref_sys</code> table defined in clause <a href="#spatial_ref_sys">Spatial Reference Systems 空间参考系统</a> above.
 Other components are defined below.</p>
 </div>
 <div class="paragraph">
@@ -929,9 +922,9 @@ Each ring is defined by a Curve instance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_contents_2">2.1.2. Contents</h4>
+<h4 id="_contents">2.1.2. Contents</h4>
 <div class="sect4">
-<h5 id="_data_4">2.1.2.1. Data</h5>
+<h5 id="_data">2.1.2.1. Data</h5>
 <div class="sect5">
 <h6 id="_contents_table_features_row">2.1.2.1.1. Contents Table – Features Row</h6>
 <div id="_requirement-18" class="quoteblock">
@@ -946,7 +939,7 @@ The <code>gpkg_contents</code> table SHALL contain a row with a lowercase <code>
 <div class="sect3">
 <h4 id="gpb_format">2.1.3. Geometry Encoding</h4>
 <div class="sect4">
-<h5 id="_data_5">2.1.3.1. Data</h5>
+<h5 id="_data_2">2.1.3.1. Data</h5>
 <div class="sect5">
 <h6 id="gpb_data_blob_format">2.1.3.1.1. BLOB Format</h6>
 <div id="_requirement-19" class="quoteblock">
@@ -1127,7 +1120,7 @@ GeoPackages SHALL use big endian 0x7ff8000000000000 or little endian 0x000000000
 <div class="sect3">
 <h4 id="sql_geometry_types">2.1.4. SQL Geometry Types</h4>
 <div class="sect4">
-<h5 id="_data_6">2.1.4.1. Data</h5>
+<h5 id="_data_3">2.1.4.1. Data</h5>
 <div class="sect5">
 <h6 id="_core_types">2.1.4.1.1. Core Types</h6>
 <div id="_requirement-20" class="quoteblock">
@@ -1142,9 +1135,9 @@ A GeoPackage SHALL store feature table geometries with the basic simple feature 
 <div class="sect3">
 <h4 id="_geometry_columns">2.1.5. Geometry Columns</h4>
 <div class="sect4">
-<h5 id="_data_7">2.1.5.1. Data</h5>
+<h5 id="_data_4">2.1.5.1. Data</h5>
 <div class="sect5">
-<h6 id="_table_definition_2">2.1.5.1.1. Table Definition</h6>
+<h6 id="_table_definition">2.1.5.1.1. Table Definition</h6>
 <div id="_requirement-21" class="quoteblock">
 <div class="title">Requirement 21</div>
 <blockquote>
@@ -1271,9 +1264,9 @@ The m value in a <code>gpkg_geometry_columns</code> table row SHALL be one of 0,
 <div class="sect3">
 <h4 id="feature_user_tables">2.1.6. Vector Feature User Data Tables</h4>
 <div class="sect4">
-<h5 id="_data_8">2.1.6.1. Data</h5>
+<h5 id="_data_5">2.1.6.1. Data</h5>
 <div class="sect5">
-<h6 id="_table_definition_3">2.1.6.1.1. Table Definition</h6>
+<h6 id="_table_definition_2">2.1.6.1.1. Table Definition</h6>
 <div class="paragraph">
 <p>The third component of the SQL schema for vector features in a GeoPackage described in clause <a href="#sfsql_intro">Simple Features SQL Introduction</a> above are tables that contain user data representing features.
 Feature attributes are columns in a feature table, including geometries.
@@ -1435,9 +1428,9 @@ Feature table geometry columns SHALL contain geometries with the <code>srs_id</c
 </div>
 </div>
 <div class="sect3">
-<h4 id="_contents_3">2.2.2. Contents</h4>
+<h4 id="_contents_2">2.2.2. Contents</h4>
 <div class="sect4">
-<h5 id="_data_9">2.2.2.1. Data</h5>
+<h5 id="_data_6">2.2.2.1. Data</h5>
 <div class="sect5">
 <h6 id="_contents_table_tiles_row">2.2.2.1.1. Contents Table – Tiles Row</h6>
 <div id="_requirement-33" class="quoteblock">
@@ -1461,7 +1454,7 @@ Other "zoom other intervals" conventions use different factors or irregular inte
 See WMTS <a href="#16">[16]</a> Annex E for additional examples of both conventions.</p>
 </div>
 <div class="sect4">
-<h5 id="_data_10">2.2.3.1. Data</h5>
+<h5 id="_data_7">2.2.3.1. Data</h5>
 <div class="sect5">
 <h6 id="_zoom_times_two">2.2.3.1.1. Zoom Times Two</h6>
 <div id="_requirement-34" class="quoteblock">
@@ -1476,7 +1469,7 @@ In a GeoPackage that contains a tile pyramid user data table that contains tile 
 <div class="sect3">
 <h4 id="tile_enc_png">2.2.4. Tile Encoding PNG</h4>
 <div class="sect4">
-<h5 id="_data_11">2.2.4.1. Data</h5>
+<h5 id="_data_8">2.2.4.1. Data</h5>
 <div class="sect5">
 <h6 id="_mime_type_png">2.2.4.1.1. MIME Type PNG</h6>
 <div id="_requirement-35" class="quoteblock">
@@ -1491,7 +1484,7 @@ In a GeoPackage that contains a tile pyramid user data table that contains tile 
 <div class="sect3">
 <h4 id="tile_enc_jpeg">2.2.5. Tile Encoding JPEG</h4>
 <div class="sect4">
-<h5 id="_data_12">2.2.5.1. Data</h5>
+<h5 id="_data_9">2.2.5.1. Data</h5>
 <div class="sect5">
 <h6 id="_mime_type_jpeg">2.2.5.1.1. MIME Type JPEG</h6>
 <div id="_requirement-36" class="quoteblock">
@@ -1506,7 +1499,7 @@ In a GeoPackage that contains a tile pyramid user data table that contains tile 
 <div class="sect3">
 <h4 id="_tile_matrix_set">2.2.6. Tile Matrix Set</h4>
 <div class="sect4">
-<h5 id="_data_13">2.2.6.1. Data</h5>
+<h5 id="_data_10">2.2.6.1. Data</h5>
 <div class="sect5">
 <h6 id="tile_matrix_set_data_table_definition">2.2.6.1.1. Table Definition</h6>
 <div id="_requirement-37" class="quoteblock">
@@ -1623,7 +1616,7 @@ Values of the <code>gpkg_tile_matrix_set</code> <code>srs_id</code> column SHALL
 <div class="sect3">
 <h4 id="tile_matrix">2.2.7. Tile Matrix</h4>
 <div class="sect4">
-<h5 id="_data_14">2.2.7.1. Data</h5>
+<h5 id="_data_11">2.2.7.1. Data</h5>
 <div class="sect5">
 <h6 id="tile_matrix_data_table_definition">2.2.7.1.1. Table Definition</h6>
 <div id="_requirement-41" class="quoteblock">
@@ -1799,7 +1792,7 @@ This means that a tile matrix set can be sparse, i.e. not contain a tile for any
 <div class="sect3">
 <h4 id="tiles_user_tables">2.2.8. Tile Pyramid User Data Tables</h4>
 <div class="sect4">
-<h5 id="_data_15">2.2.8.1. Data</h5>
+<h5 id="_data_12">2.2.8.1. Data</h5>
 <div class="sect5">
 <h6 id="tiles_user_tables_data_table_definition">2.2.8.1.1. Table Definition</h6>
 <div id="_requirement-52" class="quoteblock">
@@ -1918,7 +1911,7 @@ The information provided by this option can be used by applications to, for inst
 <div class="sect3">
 <h4 id="_data_columns">2.3.2. Data Columns</h4>
 <div class="sect4">
-<h5 id="_data_16">2.3.2.1. Data</h5>
+<h5 id="_data_13">2.3.2.1. Data</h5>
 <div class="sect5">
 <h6 id="schema_data_columns_table_definition">2.3.2.1.1. Table Definition</h6>
 <div id="_requirement-56" class="quoteblock">
@@ -2034,7 +2027,7 @@ If it is not NULL, it SHALL contain a case sensitive constraint_name column valu
 <div class="sect3">
 <h4 id="_data_column_constraints">2.3.3. Data Column Constraints</h4>
 <div class="sect4">
-<h5 id="_data_17">2.3.3.1. Data</h5>
+<h5 id="_data_14">2.3.3.1. Data</h5>
 <div class="sect5">
 <h6 id="data_column_constraints_table_definition">2.3.3.1.1. Table Definition</h6>
 <div id="_requirement-60" class="quoteblock">
@@ -2284,7 +2277,7 @@ If it contains rows with <code>constraint_type</code> column values of "enum" or
 <div class="sect2">
 <h3 id="_metadata">2.4. Metadata</h3>
 <div class="sect3">
-<h4 id="_introduction_2">2.4.1. Introduction</h4>
+<h4 id="_introduction">2.4.1. Introduction</h4>
 <div class="paragraph">
 <p>Two tables in a GeoPackage provide a means of storing metadata in MIME <a href="#21">[21]</a> encodings that are defined in accordance with any authoritative metadata specifications, and relating it to the features, rasters, and tiles data in a GeoPackage.
 These tables are intended to provide the support necessary to implement the hierarchical metadata model defined in ISO 19115 <a href="#28">[28]</a>, Annex B B.5.25 MD_ScopeCode, <a href="#metadata_example_appendix">Hierarchical Metadata Example (Informative)</a> and <a href="#raster_or_tile_metadata_example_appendix">Raster or Tile Metadata Example (Informative)</a>, so that as GeoPackage data is captured and updated, the most local and specific detailed metadata changes associated with the new or modified data MAY be captured separately, and referenced to existing global and general metadata.</p>
@@ -2297,7 +2290,7 @@ There is no GeoPackage requirement that such metadata be provided or that define
 <div class="sect3">
 <h4 id="_metadata_table">2.4.2. Metadata Table</h4>
 <div class="sect4">
-<h5 id="_data_18">2.4.2.1. Data</h5>
+<h5 id="_data_15">2.4.2.1. Data</h5>
 <div class="sect5">
 <h6 id="metadata_table_table_definition">2.4.2.1.1. Table Definition</h6>
 <div id="_requirement-68" class="quoteblock">
@@ -2514,7 +2507,7 @@ Each <code>md_scope</code> column value in a <code>gpkg_metadata</code> table or
 <div class="sect3">
 <h4 id="_metadata_reference_table">2.4.3. Metadata Reference Table</h4>
 <div class="sect4">
-<h5 id="_data_19">2.4.3.1. Data</h5>
+<h5 id="_data_16">2.4.3.1. Data</h5>
 <div class="sect5">
 <h6 id="metadata_reference_table_table_definition">2.4.3.1.1. Table Definition</h6>
 <div id="_requirement-70" class="quoteblock">
@@ -2668,7 +2661,7 @@ Every <code>gpkg_metadata_reference</code> table row <code>md_parent_id</code> c
 <div class="sect2">
 <h3 id="_extension_mechanism">2.5. Extension Mechanism</h3>
 <div class="sect3">
-<h4 id="_introduction_3">2.5.1. Introduction</h4>
+<h4 id="_introduction_2">2.5.1. Introduction</h4>
 <div class="paragraph">
 <p>A GeoPackage extension is a set of one or more requirements clauses that are documented by filling out the GeoPackage Extension Template in <a href="#extension_template">GeoPackage Extension Template (Normative)</a>. A GeoPackage Extension either profiles / extends existing requirements clauses in the geopackage specification or adds new requirements clauses. Existing requirement clause extension examples include additional geometry types, additional SQL geometry functions, and additional tile image formats. New requirement clause extension examples include spatial indexes, triggers, additional tables, other BLOB column encodings, and other SQL functions.</p>
 </div>
@@ -2681,7 +2674,7 @@ Implementers use their own author names to register other extensions<span class=
 <div class="sect3">
 <h4 id="_extensions">2.5.2. Extensions</h4>
 <div class="sect4">
-<h5 id="_data_20">2.5.2.1. Data</h5>
+<h5 id="_data_17">2.5.2.1. Data</h5>
 <div class="sect5">
 <h6 id="extensions_table_definition">2.5.2.1.1. Table Definition</h6>
 <div id="_requirement-78" class="quoteblock">
@@ -2839,7 +2832,7 @@ Definitions of those extensions in the form specified by the template in <a href
 <div class="sect3">
 <h4 id="gpkg_geometry_types_extension">3.1.1. GeoPackage Geometry Types Extension</h4>
 <div class="sect4">
-<h5 id="_data_21">3.1.1.1. Data</h5>
+<h5 id="_data_18">3.1.1.1. Data</h5>
 <div class="paragraph">
 <p>This extension of clause <a href="#sql_geometry_types">SQL Geometry Types</a> partially described in <a href="#extension_geometry_types">GeoPackage Geometry Types Extension Template (Normative)</a> defines additional geometry types.</p>
 </div>
@@ -2876,7 +2869,7 @@ A GeoPackage that contains a gpkg_geometry_columns table or updateable view with
 <div class="sect3">
 <h4 id="gpkg_user_geometry_types_extension">3.1.2. User-Defined Geometry Types Extension</h4>
 <div class="sect4">
-<h5 id="_data_22">3.1.2.1. Data</h5>
+<h5 id="_data_19">3.1.2.1. Data</h5>
 <div class="paragraph">
 <p>This extension of clauses <a href="#gpb_format">Geometry Encoding</a>, <a href="#sql_geometry_types">SQL Geometry Types</a> and <a href="#gpkg_geometry_types_extension">GeoPackage Geometry Types Extension</a> partially described in <a href="#extension_geometry_encoding">User-Defined Geometry Types Encoding Extension Template (Normative)</a> enables encoding of additional user-defined geometry types in ExtendedGeoPackageBinary format in an Extended GeoPackage.</p>
 </div>
@@ -2921,7 +2914,7 @@ The <code>geometry_type_name</code> value in a <code>gpkg_geometry_columns</code
 <div class="sect3">
 <h4 id="_rtree_spatial_indexes">3.1.3. RTree Spatial Indexes</h4>
 <div class="sect4">
-<h5 id="_data_23">3.1.3.1. Data</h5>
+<h5 id="_data_20">3.1.3.1. Data</h5>
 <div class="paragraph">
 <p>This extension described in <a href="#extension_rtree">RTree Spatial Index Extension (Normative)</a> adds a new capability for spatially indexing columns with geometries encoded per clause <a href="#gpb_format">Geometry Encoding</a> and <a href="#gpkg_user_geometry_types_extension">User-Defined Geometry Types Extension</a>.</p>
 </div>
@@ -2960,7 +2953,7 @@ A GeoPackage that implements spatial indexes SHALL have a gpkg_extensions table 
 <div class="sect3">
 <h4 id="_geometry_type_triggers">3.1.4. Geometry Type Triggers</h4>
 <div class="sect4">
-<h5 id="_data_24">3.1.4.1. Data</h5>
+<h5 id="_data_21">3.1.4.1. Data</h5>
 <div class="paragraph">
 <p>This extension described in <a href="#extension_geometry_type_triggers">Geometry Type Triggers Extension (Normative)</a> adds a new geometry type triggers capability for columns with geometries encoded per clause <a href="#gpb_format">Geometry Encoding</a> and <a href="#gpkg_user_geometry_types_extension">User-Defined Geometry Types Extension</a>.</p>
 </div>
@@ -2996,7 +2989,7 @@ A GeoPackage that implements geometry type triggers on geometry columns SHALL co
 <div class="sect3">
 <h4 id="_srs_id_triggers">3.1.5. SRS_ID Triggers</h4>
 <div class="sect4">
-<h5 id="_data_25">3.1.5.1. Data</h5>
+<h5 id="_data_22">3.1.5.1. Data</h5>
 <div class="paragraph">
 <p>This extension described in <a href="#extension_geometry_srsid_triggers">Geometry SRS ID Triggers Extension (Normative)</a> adds a new srs_id triggers capability for columns with geometries encoded per clause <a href="#gpb_format">Geometry Encoding</a> and <a href="#gpkg_user_geometry_types_extension">User-Defined Geometry Types Extension</a>.</p>
 </div>
@@ -3038,7 +3031,7 @@ A GeoPackage that implements srs_id triggers on feature table geometry columns S
 <div class="sect3">
 <h4 id="_zoom_levels">3.2.1. Zoom Levels</h4>
 <div class="sect4">
-<h5 id="_data_26">3.2.1.1. Data</h5>
+<h5 id="_data_23">3.2.1.1. Data</h5>
 <div class="paragraph">
 <p>This extension of clause <a href="#zoom_levels">Zoom Levels</a> described in <a href="#extension_zoom_other_intervals">Zoom Other Intervals Extension (Normative)</a> allows zoom level intervals other than a factor of two.</p>
 </div>
@@ -3071,7 +3064,7 @@ A GeoPackage that implements other zoom intervals SHALL have a gpkg_extensions t
 <div class="sect3">
 <h4 id="tile_enc_webp">3.2.2. Tile Encoding WEBP</h4>
 <div class="sect4">
-<h5 id="_data_27">3.2.2.1. Data</h5>
+<h5 id="_data_24">3.2.2.1. Data</h5>
 <div class="paragraph">
 <p>This extension of clauses <a href="#tile_enc_png">Tile Encoding PNG</a> and <a href="#tile_enc_jpeg">Tile Encoding JPEG</a> described in <a href="#extension_tiles_webp">Tiles Encoding WebP Extension (Normative)</a> allows encoding of tile images in WebP format.</p>
 </div>
@@ -3117,13 +3110,13 @@ The GeoPackage specification does not place any constraints on application, plat
 <h2 id="abstract_test_suite"> Annex A: Conformance / Abstract Test Suite (Normative)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_base_2">A.1. Base</h3>
+<h3 id="_base">A.1. Base</h3>
 <div class="sect3">
-<h4 id="_core_2">A.1.1. Core</h4>
+<h4 id="_core">A.1.1. Core</h4>
 <div class="sect4">
-<h5 id="_sqlite_container_2">A.1.1.1. SQLite Container</h5>
+<h5 id="_sqlite_container">A.1.1.1. SQLite Container</h5>
 <div class="sect5">
-<h6 id="_data_28">A.1.1.1.1. Data</h6>
+<h6 id="_data_25">A.1.1.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>File Format</strong></p>
 </div>
@@ -3609,7 +3602,7 @@ The GeoPackage specification does not place any constraints on application, plat
 <div class="sect4">
 <h5 id="_spatial_reference_systems">A.1.1.2. Spatial Reference Systems</h5>
 <div class="sect5">
-<h6 id="_data_29">A.1.1.2.1. Data</h6>
+<h6 id="_data_26">A.1.1.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -3781,9 +3774,9 @@ AUTHORITY["EPSG","4326"] (rounding the UNIT conversion factors to 16 decimal pla
 </div>
 </div>
 <div class="sect4">
-<h5 id="_contents_4">A.1.1.3. Contents</h5>
+<h5 id="_contents_3">A.1.1.3. Contents</h5>
 <div class="sect5">
-<h6 id="_data_30">A.1.1.3.1. Data</h6>
+<h6 id="_data_27">A.1.1.3.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -4071,9 +4064,9 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 
 </div>
 <div class="sect4">
-<h5 id="_contents_5">A.2.1.2. Contents</h5>
+<h5 id="_contents_4">A.2.1.2. Contents</h5>
 <div class="sect5">
-<h6 id="_data_31">A.2.1.2.1. Data</h6>
+<h6 id="_data_28">A.2.1.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>Contents Table Feature Row</strong></p>
 </div>
@@ -4125,7 +4118,7 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 <div class="sect4">
 <h5 id="_geometry_encoding">A.2.1.3. Geometry Encoding</h5>
 <div class="sect5">
-<h6 id="_data_32">A.2.1.3.1. Data</h6>
+<h6 id="_data_29">A.2.1.3.1. Data</h6>
 <div class="paragraph">
 <p><strong>BLOB Format</strong></p>
 </div>
@@ -4215,7 +4208,7 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 <div class="sect4">
 <h5 id="_sql_geometry_types">A.2.1.4. SQL Geometry Types</h5>
 <div class="sect5">
-<h6 id="_data_33">A.2.1.4.1. Data</h6>
+<h6 id="_data_30">A.2.1.4.1. Data</h6>
 <div class="paragraph">
 <p><strong>Core Types</strong></p>
 </div>
@@ -4372,7 +4365,7 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 <div class="sect4">
 <h5 id="_geometry_columns_2">A.2.1.5. Geometry Columns</h5>
 <div class="sect5">
-<h6 id="_data_34">A.2.1.5.1. Data</h6>
+<h6 id="_data_31">A.2.1.5.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -4811,7 +4804,7 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 <div class="sect4">
 <h5 id="_vector_features_user_data_tables">A.2.1.6. Vector Features User Data Tables</h5>
 <div class="sect5">
-<h6 id="_data_35">A.2.1.6.1. Data</h6>
+<h6 id="_data_32">A.2.1.6.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -5092,9 +5085,9 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 <div class="sect3">
 <h4 id="_tiles_2">A.2.2. Tiles</h4>
 <div class="sect4">
-<h5 id="_contents_6">A.2.2.1. Contents</h5>
+<h5 id="_contents_5">A.2.2.1. Contents</h5>
 <div class="sect5">
-<h6 id="_data_36">A.2.2.1.1. Data</h6>
+<h6 id="_data_33">A.2.2.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>Contents Table – Tiles Row</strong></p>
 </div>
@@ -5171,7 +5164,7 @@ FROM gpkg_contents AS ge LEFT OUTER JOIN sqlite_master AS sm ON gc.table_name = 
 <div class="sect4">
 <h5 id="_zoom_levels_2">A.2.2.2. Zoom Levels</h5>
 <div class="sect5">
-<h6 id="_data_37">A.2.2.2.1. Data</h6>
+<h6 id="_data_34">A.2.2.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>Zoom Times Two</strong></p>
 </div>
@@ -5253,7 +5246,7 @@ END;</p>
 <div class="sect4">
 <h5 id="_tile_encoding_png">A.2.2.3. Tile Encoding PNG</h5>
 <div class="sect5">
-<h6 id="_data_38">A.2.2.3.1. Data</h6>
+<h6 id="_data_35">A.2.2.3.1. Data</h6>
 <div class="paragraph">
 <p><strong>MIME Type PNG</strong></p>
 </div>
@@ -5336,7 +5329,7 @@ END;</p>
 <div class="sect4">
 <h5 id="_tile_encoding_jpeg">A.2.2.4. Tile Encoding JPEG</h5>
 <div class="sect5">
-<h6 id="_data_39">A.2.2.4.1. Data</h6>
+<h6 id="_data_36">A.2.2.4.1. Data</h6>
 <div class="paragraph">
 <p><strong>MIME Type JPEG</strong></p>
 </div>
@@ -5419,7 +5412,7 @@ END;</p>
 <div class="sect4">
 <h5 id="_tile_matrix_set_2">A.2.2.5. Tile Matrix Set</h5>
 <div class="sect5">
-<h6 id="_data_40">A.2.2.5.1. Data</h6>
+<h6 id="_data_37">A.2.2.5.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -5646,7 +5639,7 @@ END;</p>
 <div class="sect4">
 <h5 id="_tile_matrix">A.2.2.6. Tile Matrix</h5>
 <div class="sect5">
-<h6 id="_data_41">A.2.2.6.1. Data</h6>
+<h6 id="_data_38">A.2.2.6.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -6281,7 +6274,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_tile_pyramid_user_data">A.2.2.7. Tile Pyramid User Data</h5>
 <div class="sect5">
-<h6 id="_data_42">A.2.2.7.1. Data</h6>
+<h6 id="_data_39">A.2.2.7.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -6581,7 +6574,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_data_columns_2">A.2.3.1. Data Columns</h5>
 <div class="sect5">
-<h6 id="_data_43">A.2.3.1.1. Data</h6>
+<h6 id="_data_40">A.2.3.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -6834,7 +6827,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_data_column_constraints_2">A.2.3.2. Data Column Constraints</h5>
 <div class="sect5">
-<h6 id="_data_44">A.2.3.2.1. Data</h6>
+<h6 id="_data_41">A.2.3.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -7335,7 +7328,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_metadata_table_2">A.2.4.1. Metadata Table</h5>
 <div class="sect5">
-<h6 id="_data_45">A.2.4.1.1. Data</h6>
+<h6 id="_data_42">A.2.4.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -7458,7 +7451,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_metadata_reference_table_2">A.2.4.2. Metadata Reference Table</h5>
 <div class="sect5">
-<h6 id="_data_46">A.2.4.2.1. Data</h6>
+<h6 id="_data_43">A.2.4.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -7961,7 +7954,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_extensions_2">A.2.5.1. Extensions</h5>
 <div class="sect5">
-<h6 id="_data_47">A.2.5.1.1. Data</h6>
+<h6 id="_data_44">A.2.5.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>Table Definition</strong></p>
 </div>
@@ -8460,7 +8453,7 @@ LEFT OUTER JOIN &lt;user_data_tiles_table&gt; AS udtt ON udtt.zoom_level =  gtmm
 <div class="sect4">
 <h5 id="_geometry_types">A.3.1.1. Geometry Types</h5>
 <div class="sect5">
-<h6 id="_data_48">A.3.1.1.1. Data</h6>
+<h6 id="_data_45">A.3.1.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>GeoPackage Extension Types</strong></p>
 </div>
@@ -8744,7 +8737,7 @@ viii. Otherwise log pass</p>
 <div class="sect4">
 <h5 id="_user_defined_geometry_types">A.3.1.2. User-Defined Geometry Types</h5>
 <div class="sect5">
-<h6 id="_data_49">A.3.1.2.1. Data</h6>
+<h6 id="_data_46">A.3.1.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>Extensions Encoding</strong></p>
 </div>
@@ -9033,7 +9026,7 @@ viii. Otherwise log pass</p>
 <div class="sect4">
 <h5 id="_spatial_indexes">A.3.1.3. Spatial Indexes</h5>
 <div class="sect5">
-<h6 id="_data_50">A.3.1.3.1. Data</h6>
+<h6 id="_data_47">A.3.1.3.1. Data</h6>
 <div class="paragraph">
 <p><strong>Spatial Indexes Implementation</strong></p>
 </div>
@@ -9319,7 +9312,7 @@ viii. Otherwise log pass</p>
 <div class="sect4">
 <h5 id="_geometry_type_triggers_2">A.3.1.4. Geometry Type Triggers</h5>
 <div class="sect5">
-<h6 id="_data_51">A.3.1.4.1. Data</h6>
+<h6 id="_data_48">A.3.1.4.1. Data</h6>
 <div class="paragraph">
 <p><strong>Geometry Type Triggers Implementation</strong></p>
 </div>
@@ -9586,7 +9579,7 @@ viii. Otherwise log pass</p>
 <div class="sect4">
 <h5 id="_srs_id_triggers_2">A.3.1.5. SRS_ID Triggers</h5>
 <div class="sect5">
-<h6 id="_data_52">A.3.1.5.1. Data</h6>
+<h6 id="_data_49">A.3.1.5.1. Data</h6>
 <div class="paragraph">
 <p><strong>SRS_ID Triggers – Implementation</strong></p>
 </div>
@@ -9847,7 +9840,7 @@ viii. Otherwise log pass</p>
 <div class="sect4">
 <h5 id="_zoom_levels_3">A.3.2.1. Zoom Levels</h5>
 <div class="sect5">
-<h6 id="_data_53">A.3.2.1.1. Data</h6>
+<h6 id="_data_50">A.3.2.1.1. Data</h6>
 <div class="paragraph">
 <p><strong>Zoom Other Intervals—Extensions Name</strong></p>
 </div>
@@ -9981,7 +9974,7 @@ viii. Otherwise log pass</p>
 <div class="sect4">
 <h5 id="_tile_encoding_webp">A.3.2.2. Tile Encoding WEBP</h5>
 <div class="sect5">
-<h6 id="_data_54">A.3.2.2.1. Data</h6>
+<h6 id="_data_51">A.3.2.2.1. Data</h6>
 <div class="paragraph">
 <p><strong>WEBP – Extensions Name</strong></p>
 </div>
@@ -14899,7 +14892,7 @@ An example of the data items in such a model is shown in the following table.</p
 <div class="paragraph">
 <p>Title of the Extension</p>
 </div>
-<h3 id="_introduction_4" class="float">Introduction</h3>
+<h3 id="_introduction_3" class="float">Introduction</h3>
 <div class="paragraph">
 <p>Description of extension</p>
 </div>
@@ -15001,7 +14994,7 @@ An example of the data items in such a model is shown in the following table.</p
 <div class="paragraph">
 <p>GeoPackage Non-Linear Geometry Types</p>
 </div>
-<h3 id="_introduction_5" class="float">Introduction</h3>
+<h3 id="_introduction_4" class="float">Introduction</h3>
 <div class="paragraph">
 <p>Clause 2.1.4 of the GeoPackage Version 1 Encoding Standard specifies support for the Geometry, Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, and GeomCollection geometry types in the GeoPackageBinary geometry encoding format specified in clause 2.1.3.
 This extension specifies support for the additional CircularString, CompoundCurve, CurvePolygon, MultiCurve, MultiSurface, Curve, and Surface geometry types in the GeoPackage Binary geometry encoding format using the codes listed in Annex D.</p>
@@ -15048,7 +15041,7 @@ This extension specifies support for the additional CircularString, CompoundCurv
 <div class="paragraph">
 <p>User Defined Geometry Types Extension of GeoPackageBinary Geometry Encoding</p>
 </div>
-<h3 id="_introduction_6" class="float">Introduction</h3>
+<h3 id="_introduction_5" class="float">Introduction</h3>
 <div class="paragraph">
 <p>This extension specifies a standard way to implement user defined extensions of the GeoPackageBinary geometry encoding format to encode geometry types not specified in clauses <a href="#sql_geometry_types">SQL Geometry Types</a> and 3.1.1 and listed in <a href="#geometry_types">Geometry Types (Normative)</a>.
 It is intended to be a bridge to enable use of geometry types like EllipiticalCurve in Extended GeoPackages until standard encodings of such types are developed and published for the Well Known Binary (WKB) format.</p>
@@ -15126,7 +15119,7 @@ The actual extension geometry body is not specified, but SHALL be described in t
 <div class="paragraph">
 <p>Rtree Spatial Indexes</p>
 </div>
-<h3 id="_introduction_7" class="float">Introduction</h3>
+<h3 id="_introduction_6" class="float">Introduction</h3>
 <div class="paragraph">
 <p>The rtree index extension provides a means to encode an rtree index for geometry values in a GeoPackage. An RTree index provides a significant performance advantage for searches with basic envelope spatial criteria that return subsets of the rows in a feature table with a non-trivial number (thousands or more) of rows.</p>
 </div>
@@ -15367,7 +15360,7 @@ These spatial index triggers SHALL be defined as follows:</p>
 <div class="paragraph">
 <p>Geometry Type Triggers</p>
 </div>
-<h3 id="_introduction_8" class="float">Introduction</h3>
+<h3 id="_introduction_7" class="float">Introduction</h3>
 <div class="paragraph">
 <p>Geometry type triggers prevent the storage of geometries of types that are not assignable from the geometry types specified in the gpkg_geometry_columns table in the geometry columns of the specified tables.</p>
 </div>
@@ -15464,7 +15457,7 @@ These spatial index triggers SHALL be defined as follows:</p>
 <div class="paragraph">
 <p>Geometry SRS_ID Triggers</p>
 </div>
-<h3 id="_introduction_9" class="float">Introduction</h3>
+<h3 id="_introduction_8" class="float">Introduction</h3>
 <div class="paragraph">
 <p>Geometry SRS_ID triggers prevent the storage of geometries with spatial reference system identifiers that are not specified in the <code>gpkg_geometry_columns</code> table in the geometry columns of the specified tables.</p>
 </div>
@@ -15556,7 +15549,7 @@ These spatial index triggers SHALL be defined as follows:</p>
 <div class="paragraph">
 <p>Zoom Other Intervals</p>
 </div>
-<h3 id="_introduction_10" class="float">Introduction</h3>
+<h3 id="_introduction_9" class="float">Introduction</h3>
 <div class="paragraph">
 <p>In a GeoPackage, zoom levels are integers in sequence from 0 to n that identify tile matrix layers in a tile matrix set that contain tiles of decreasing spatial extent and finer spatial resolution.
 Adjacent zoom levels immediately precede or follow each other and differ by a value of 1.
@@ -15610,7 +15603,7 @@ See WMTS <a href="#16">[16]</a> Annex E for additional examples of both conventi
 <div class="paragraph">
 <p>Tile Encoding WebP</p>
 </div>
-<h3 id="_introduction_11" class="float">Introduction</h3>
+<h3 id="_introduction_10" class="float">Introduction</h3>
 <div class="paragraph">
 <p>PNG and JPEG are the default MIME types for encoding images in tile pyramid user data tables.
 This extension allows the use of <code>image/x-webp</code> as an additional encoding type.</p>
@@ -15958,7 +15951,7 @@ For undated references, the latest edition of the normative document referred to
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-02-27 19:21:08 UTC
+Last updated 2014-06-11 13:36:08 CST
 </div>
 </div>
 </body>
