@@ -129,7 +129,7 @@ Views of this table MAY be used to provide compatibility with the http://www.iso
 该gpkg_spatial_ref_sys表至少包括在SQL / MM（ISO13249-3）规定，和在下表3中展示出的列，表3中包含定义空间参考系统的数据。 此表的视图可以用于提供与SQL /毫米的兼容性（表19）和SQL（表20）规定的OGC简单要素。
 
 [[gpkg_spatial_ref_sys_cols]]
-.Spatial Ref Sys Table Definition 空间参考系统表的定义
+.空间参考系统表的定义
 [cols=",,,",options="header",]
 |=======================================================================
 |Column Name |Column Type |Column Description |Null |Key
@@ -143,7 +143,7 @@ Views of this table MAY be used to provide compatibility with the http://www.iso
 
 See <<gpkg_spatial_ref_sys_sql>>.
 
-====== Table Data Values 表中数据值
+====== 表中数据值
 
 Definition column WKT values in the gpkg_spatial_ref_sys table SHALL define the Spatial Reference Systems used by feature geometries and tile images, unless these SRS are unknown and therefore undefined as specified in <<_requirement-11>>. Values SHALL be constructed per the EBNF syntax in <<32>> clause 7. Values SHALL include optional <authority> EBNF entities. Values for SRS other than WGS-84 SHOULD include optional <to wgs84> EBNF entities. Values MAY omit optional <to wgs84> and <twin axes> EBNF entities. EBNF name and number values MAY be obtained from any specified <authority>, e.g. <<13>><<14>>. For example, see the return value in <<spatial_ref_sys_data_values_default>> Test Method step (3) used to test the definition for WGS-84 per <<_requirement-11>>:
 在gpkg_spatial_ref_sys表中定义的WKT列值，将定义使用了集合要素和图片的空间参考系统。除非这些SRS是未知的，因此不需要在要求11中指定。值应该按第7条款中的EBNF语法构建。值应包括可选的<局> EBNF实体。SRS除了WGS-84外，应包括可选的< WGS84 > EBNF实体值。值可以忽略可选的< WGS84 >和< < WGS84双轴> EBNF实体。EBNF的名字和号码的值可以从任何指定的<局>获得。例如，看到A.1.1.2.1.2试验方法步骤的返回值，用于测试每个请求11 的WGS-84坐标定义。
