@@ -1,29 +1,24 @@
 [preface]
-== Introduction
+== 介绍
 
-Mobile device users who require map/geospatial application services and operate in disconnected or limited network connectivity environments are challenged by limited storage capacity and the lack of open format geospatial data to support these applications.
-The current situation is that each map/geospatial application requires its own potentially proprietary geospatial data store.
-These separate application-specific data stores may contain the same geospatial data, wasting the limited storage available, and requiring custom applications for data translation, replication, and synchronization to enable different map/geospatial applications to share the same world view. In addition, many existing geospatial data stores are platform-specific, which means that users with different platforms must translate data to share it.
+想要在网络连接中断或是受限的环境下，获取和使用地图或地理空间信息应用服务的移动设备用户，会受到有限的存储容量和缺乏开放格式的地理空间数据去支持这些应用的挑战。目前的情况是，每一个地图和地理空间应用程序都需要自己潜在的专有的地理空间数据存储。这些独立的应用程序数据可能包含相同的地理空间数据，浪费了有限的可用的存储空间，并要求自定义应用程序对数据进行转换、复制和同步，使不同的地图和地理空间应用程序能够被世界识别认同。此外，许多现有的地理空间数据存储需要具体的平台，这意味着使用不同的平台的用户必须转化数据以实现共享。
 
-An open, standards-based, application-independent, platform-independent, portable, interoperable, self-describing, GeoPackage (GPKG) data container, API and manifest are needed to overcome these challenges and to effectively support multiple map/geospatial applications such as fixed product distribution, local data collection, and geospatially enabled analytics.
-This standard is intended to facilitate widespread adoption and use of GeoPackages by both COTS and open-source software applications on enterprise production platforms as well as mobile hand-held devices <<B1>> <<B2>>, given that mobile hand held devices do not yet have the processing power or battery life to effectively tackle difficult geospatial product production and analysis tasks.
-An application that accesses a GPKG will make use of the GPKG capabilities it requires; few if any such applications will make use of all GPKG capabilities.
+一个开放的、基于标准的、独立于应用程序的、独立于平台的、便携的、可互操作的、可自定义的、geopackage（gpkg）数据容器，API和表现需要克服这些挑战，去有效地支持多个地图和地理空间应用，如固定的产品分布，本地数据收集，和地理空间分析功能。
+本标准的目的是促进GeoPackages的广泛采用，和通过COTS和开源软件应用在企业生产平台以及移动手持设备上使用GeoPackages，考虑到移动手持设备还没有，通过处理电源或电池寿命来有效地解决困难的地理空间产品的生产和分析的任务。
+一个访问了gpkg的应用程序将使用它需要的gpkg能力；很少有这样的应用程序将利用一切gpkg能力。
 
-This OGC® Encoding Standard defines GeoPackages for exchange and GeoPackage SQLite Extensions for direct use of vector geospatial features and / or tile matrix sets of earth images and raster maps at various scales.
-Direct use means the ability to access and update data in a “native” format without intermediate format translations in an environment (e.g. through an API) that guarantees data model and data set integrity and identical access and update results in response to identical requests from different client applications.
+OGC®  编码标准定义了用于数据交换的GeoPackage协议，定义了GeoPackage SQLite扩展用于在多种比例尺级别直接使用矢量地理空间要素信息，以及地球影像、栅格地图的瓦片矩阵集合。直接使用意味着有能力以原生（native）的格式访问和更新数据，而不需要中间格式转换（例如，通过API），这样能确保数据模型和数据集的完整性，以及在对来自各个不同的客户端的请求进行响应时，返回完全相同的访问、更新结果。
 
-A *GeoPackage* is a platform-independent SQLite <<5>> database file that contains GeoPackage data and metadata tables shown in <<geopackage_tables_figure>> below, with specified definitions, integrity assertions, format limitations and content constraints.
-The allowable content of a GeoPackage is entirely defined in this specification.
+*GeoPackage*是一个独立于平台的SQLite <<5>>数据库文件，包含geopackage数据和元数据表如<<geopackage_tables_figure>> 所示，规范的定义，完整的声明，格式和内容的约束限制。geopackage允许的内容在规范中进行了完全定义。扩展后的geopackage包含任何额外的数据元素（表或列）或SQL结构（数据类型，功能，指标，约束或触发器），这些在标准的规范中不支持。
 
 An *Extended GeoPackage* is a *GeoPackage* that contains any additional data elements (tables or columns) or SQL constructs (data types, functions, indexes, constraints or triggers) that are not specified in this encoding standard.
 
-A *GeoPackage* MAY be “empty” (contain user data table(s) for vector features and/or tile matrix pyramids with no row record content) or contain one or many vector feature type records and /or one or many tile matrix pyramid tile images.
-GeoPackage metadata CAN describe GeoPackage data contents and identify external data synchronization sources and targets.
-A GeoPackage MAY contain spatial indexes on feature geometries and SQL triggers to maintain indexes and enforce content constraints.
+*GeoPackage* 可能为“空”（包含存储矢量要素和没有行记录内容的瓦片金字塔矩阵的用户数据表），也可能为包含一个或多个矢量特征类型的记录或一个或多个瓦片金字塔图像矩阵。geopackage元数据（CAN）描述了geopackage数据内容和识别外部数据同步的源和目标。
+Geopackage可能包含具有空间索引的几何要素和用于维护索引和执行内容约束的SQL触发器。
 
 A *GeoPackage SQLite Configuration* consists of the SQLite 3 software library and a set of compile- and runtime configurations options.
+*Geopackage SQLite配置项*由SQLite 3软件库和一组编译和运行时配置选项组成。*Geopackage SQLite Extension*是一个SQLite加载的扩展项，可以提供支持空间索引和SQL触发器的SQL功能<<12>> 。SQL触发器与具有指定配置要求的SQL库关联，指定的配置要求提供SQL API <<1>> <<2>> <<3>> <<4>>访问geopackage。本标准不解决在潜在的未来工作条款附录B（the <<_potential_future_work>> clause in <<background_and_context>>）中列出的问题，它可能在后续版本规范或其他规范中解决。
 
-A *GeoPackage SQLite Extension* is a SQLite loadable extension that MAY provide SQL functions <<12>> to support spatial indexes and SQL triggers linked to a SQLite library with specified configuration requirements to provide SQL API <<1>> <<2>> <<3>> <<4>> access to a GeoPackage file. This standard does not address the issues listed in the <<_potential_future_work>> clause in <<background_and_context>>, which MAY be addressed in a subsequent version of this specification or by other specifications.
 
 [[geopackage_tables_figure]]
 .GeoPackage Tables Overview
