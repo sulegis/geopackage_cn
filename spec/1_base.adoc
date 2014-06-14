@@ -110,7 +110,7 @@ Every GeoPackage SQLite Configuration SHALL have the SQLite library compile and 
 |=======================================================================
 
 [[spatial_ref_sys]]
-==== Spatial Reference Systems 空间参考系统
+==== 空间参考系统
 
 ===== 数据
 
