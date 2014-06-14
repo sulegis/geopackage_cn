@@ -33,11 +33,9 @@ A GeoPackage SHALL be a http://www.sqlite.org/[SQLite] <<5>> database file using
 The first 16 bytes of a GeoPackage SHALL contain “SQLite format 3” {req1_foot1} in ASCII <<B4>>. {req1_foot2}
 
 [requirement]
-A GeoPackage SHALL contain 0x47503130 ("GP10" in ASCII) in the application id field of the SQLite database header to indicate a GeoPackage version 1.0 file. {req2_foot1}
+SQLite数据库头的应用ID字段应包含0x47503130（在ASCII 中的“10”），来表明是geopackage 1.0 版文件。 {req2_foot1}
 
-The maximum size of a GeoPackage file is about 140TB.
-In practice a lower size limit MAY be imposed by the filesystem to which the file is written.
-Many mobile devices require external memory cards to be formatted using the FAT32 file system which imposes a maximum size limit of 4GB.
+GeoPackage的最大存储空间约为140TB。在实际应用中，较低存储空间可能受写入文件系统中的文件限制。许多移动设备需要外部存储卡，这些外部存储卡可以使用增加了4GB最大大小的FAT32文件系统进行格式化。
 
 ====== File Extension Name
 
